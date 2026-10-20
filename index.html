@@ -104,6 +104,48 @@ h2 { font-size:clamp(29px,4vw,43px);letter-spacing:-1.5px;line-height:1.2;margin
 .icon { color:var(--green);font-size:23px;margin-bottom:9px; }
 h3 { font-size:17px;margin:0 0 7px; }
 .card p { font-size:14px;color:var(--muted);margin:0; }
+
+/* NEW: TEAM ACHIEVEMENTS CSS */
+.achievement-box {
+  display: flex;
+  gap: 25px;
+  padding: 25px;
+  border: 1px solid var(--border);
+  background: linear-gradient(145deg,#111a27,#0c111a);
+  border-radius: 15px;
+  align-items: center;
+  transition: .2s;
+}
+.achievement-box:hover {
+  border-color: #3b755d;
+  transform: translateY(-3px);
+}
+.achievement-img {
+  flex: 0 0 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #29394b;
+}
+.achievement-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.achievement-text h3 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+.achievement-text .company-name {
+  color: var(--green);
+  font-weight: 800;
+  margin: 0 0 10px;
+}
+.achievement-text p {
+  color: var(--muted);
+  font-size: 15px;
+  margin: 0;
+}
+
 .steps { display:grid;grid-template-columns:repeat(4,1fr);gap:20px; }
 .step { border-top:1px solid #385045;padding-top:16px; }
 .step b { color:var(--green);font:13px ui-monospace,monospace; }
@@ -124,11 +166,16 @@ h3 { font-size:17px;margin:0 0 7px; }
 .contact p { color:var(--muted);max-width:620px; }
 footer { border-top:1px solid #202c3a;padding:25px 0;color:#8293a7;font-size:13px; }
 .footer { display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap; }
+
 @media(max-width:800px) {
   .hero { grid-template-columns:1fr;padding:65px 0; }
   .skills { grid-template-columns:repeat(2,1fr); }
   .navlinks { gap:12px; }
   .navlinks a:not(.nav-cta) { display:none; }
+  
+  /* Mobile Achievement */
+  .achievement-box { flex-direction: column; align-items: flex-start; }
+  .achievement-img { flex: auto; width: 100%; }
 }
 @media(max-width:550px) {
   .stats { grid-template-columns:repeat(2,1fr); }
@@ -155,7 +202,7 @@ footer { border-top:1px solid #202c3a;padding:25px 0;color:#8293a7;font-size:13p
   <div class="navlinks">
     <a href="#expertise">Expertise</a>
     <a href="#services">Services</a>
-    <a href="#process">Process</a>
+    <a href="#achievements">Team</a> <!-- NAYA LINK ADDED -->
     <a href="#profiles">Profiles</a>
     <a class="btn primary nav-cta" href="#contact">Contact ↗</a>
   </div>
@@ -250,6 +297,25 @@ footer { border-top:1px solid #202c3a;padding:25px 0;color:#8293a7;font-size:13p
     <div class="step"><b>02 / TEST</b><h3>Assess & validate</h3><p>Test approved assets and safely validate relevant findings.</p></div>
     <div class="step"><b>03 / REPORT</b><h3>Explain the risk</h3><p>Deliver evidence, impact, severity and remediation advice.</p></div>
     <div class="step"><b>04 / RETEST</b><h3>Verify the fix</h3><p>Retest remediation where included in the agreed scope.</p></div>
+  </div>
+</section>
+
+<!-- NAYA SECTION: TEAM ACHIEVEMENTS -->
+<section class="wrap" id="achievements">
+  <div class="eyebrow">Team Achievements</div>
+  <h2>Recognized by leading platforms.</h2>
+  <p class="intro">Our researchers actively participate in top bug bounty programs to help secure the digital ecosystem.</p>
+  
+  <div class="achievement-box">
+    <div class="achievement-img">
+      <img src="indmoney-cert.jpg" alt="INDmoney Bug Bounty Certificate">
+    </div>
+    <div class="achievement-text">
+      <h3>Certificate of Appreciation</h3>
+      <p class="company-name">INDmoney</p>
+      <p>Awarded to <strong>Mohd Mukammil</strong> (Team FindHyde) for contributing to the INDmoney Bug Bounty Program and helping secure complex financial applications.</p>
+      <div class="badge" style="margin-top: 15px;">Fintech Security</div>
+    </div>
   </div>
 </section>
 
